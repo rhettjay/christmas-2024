@@ -17,6 +17,14 @@ Be aware if you do this the LEDs can short out, or it will drain the battery ear
 
 The on position of the switch is in the position marked on the board. Make sure to solder the switch with the three legs fitting into the solder pads.
 
+## External 3.3 V power
+
+J1 is an unpopulated two-pin through-hole header. Pin 1 (square pad, marked `-`) is the return; pin 2 (marked `+`) accepts 3.3 V. The existing switch still controls the LEDs.
+
+JP1 selects the power source. Its factory copper bridge joins pads 1 and 2 for battery power. To use J1 while leaving the battery installed, cut the bridge between pads 1 and 2, check that the pads are no longer connected, then solder a bridge between pads 2 and 3. Bridge only one side of JP1 at a time. To return to battery power, remove the 2–3 bridge and reconnect pads 1 and 2.
+
+The files in `gerber/` describe the original battery-only board. Regenerate fabrication files from the KiCad project to manufacture the board with J1 and JP1.
+
 Alternatively you can just enjoy the ornament for what it is without any leds.
 
 
